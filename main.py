@@ -1,0 +1,2 @@
+#Greet user
+print("Hello player, welcome to the game of Loteria! Here are the rules of the game: 1st, Choose a big card, 2nd-shuffle the deck of cards, 3rd-either the computer or the user picks a card from the deck of cards, 4th- If the card someone pulls is on your big card, cover it with a bean, 5th- repeat until someone has 4 in a row horizontally or diagonally on their card. Lastly, if the user can choose to continue the round utnil either the computer or user gets a blackout")
