@@ -1,13 +1,21 @@
 import random
 from cards import loteria_dict
 
+#chatgpt
+words = list(loteria_dict.items())
+random.shuffle(words)
+
+renamed_dict = dict(words)
+
 #Greet user
-print("""
-      Hello player, welcome to the game of Loteria!
+print(f"""
+      Hello player, welcome to the game of Loteria! Here are the card named: {renamed_dict}
       """)
+print(renamed_dict)
 
 #translate and track score
 def main(loteria_dict):
+    loteria_dict = renamed_dict
     correct_answer = 0
     wrong_answer = 0
     need_work = []
@@ -24,16 +32,34 @@ def main(loteria_dict):
             wrong_answer += 1
             print(f"{wrong_answer} wrong.")
             need_work.append(key)
-        spaced_repitition(need_work)
+            print()
+        retry_words(need_work)
 
-def spaced_repitition(?):
-    user_choice = input("Do you want to practice spaced repitition?: Y/N")
+
+def retry_words(need_work):
+    if not need_work:
+        print("No words to review, congrats!")
+        return
+    
+    user_choice = input("Do you want to practice the words you missed?: Y/N")
     if user_choice == "N":
         print("Thanks for playing!")
         return
+    
     elif user_choice == "Y":
-        for i in wrong_answer:
-            print(f"What does {key} mean?: ")
+        retry_words(need_work)
+            
+    else:
+        print("Invalid Answer")
+
+def retry_questions(need_work):
+    loteria_dict = renamed_dict
+
+    for key in need_work:
+        response = input(f"What does {key} mean?: ")
+        
+        if 
+
 
 
 if __name__== "__main__":
