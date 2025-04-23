@@ -27,6 +27,8 @@ def main(loteria_dict):
             correct_answer += 1
             ques_num += 1
             print(f"So far you have {correct_answer} correct.")
+        elif capitalized_translation != "":
+            #something here
         elif capitalized_translation != loteria_dict[key]:
             print(f"Number {ques_num} INCORRECT, it means {loteria_dict[key]}")
             wrong_answer += 1
@@ -34,7 +36,6 @@ def main(loteria_dict):
             print(f"{wrong_answer} wrong.")
             need_work.append(key)
     retry_words(need_work)
-
 
 def retry_words(need_work):
     if not need_work:
