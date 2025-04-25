@@ -22,13 +22,13 @@ def main(loteria_dict):
     for key in loteria_dict:
         translation = input(f"What does {key} mean?: ")
         capitalized_translation = translation.title()
+
         if capitalized_translation == loteria_dict[key]:
             print(f"Number {ques_num}, CORRECT!")
             correct_answer += 1
             ques_num += 1
             print(f"So far you have {correct_answer} correct.")
-        elif capitalized_translation != "":
-            #something here
+
         elif capitalized_translation != loteria_dict[key]:
             print(f"Number {ques_num} INCORRECT, it means {loteria_dict[key]}")
             wrong_answer += 1
@@ -71,6 +71,7 @@ def retry_questions(need_work):
             print(f"Incorrect, it means {loteria_dict[key]}")
             wrong_answer += 1
             print(f"{wrong_answer} wrong.") 
+            
     print("Thanks for playing, I hope you learned some spanish.")
 
 
